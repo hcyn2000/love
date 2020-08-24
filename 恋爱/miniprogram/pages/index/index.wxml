@@ -1,1 +1,36 @@
-<!--miniprogram/pages/index/index.wxml-->
+<view class="container">
+	<view class="header">
+		<image class="header-left" src="/images/标题.png"></image>
+		<text class="header-live">直播</text>
+		<image class="header-right" src="/images/living.gif"></image>
+	</view>
+	<van-search
+	 class="searchBar"
+	 value="{{ value }}"
+	 shape="round"
+	 background="rgb(238, 60, 90)"
+	 placeholder="请输入搜索关键词"
+	/>
+	<block wx:for="{{items}}">
+		<swiper
+		 class
+		 indicator-dots="false"
+		 indicator-color="rgba(0,0,0,.3)"
+		 autoplay="false"
+		 current="0"
+		 current-item-id
+		 interval="5000"
+		 duration="1000"
+		 circular="false"
+		 vertical="false"
+		 previous-margin="false"
+		 next-margin="0px"
+		 display-multiple-items="1"
+		 skip-hidden-item-layout="false"
+		 bindchange
+		 bindanimationfinish
+		></swiper>
+	</block>
+	<view class="content">话术</view>
+</view>
+
