@@ -1,1 +1,28 @@
 /* miniprogram/pages/my/my.wxss */
+page {
+    background-color: #fff;
+}
+.content-head {
+    background-color: skyblue;
+    padding-top: 70rpx ;
+    overflow: hidden;
+}
+.content-head-headshot {
+    margin: 0 auto;
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.content-head-headshot image {
+    width: 100%;
+    height: 100%;
+}
+.content-head-text {
+    text-align: center;
+    padding: 40rpx 0;
+    color: #fff;
+}
+.content-head .btn {
+    margin: 25rpx auto;
+}
