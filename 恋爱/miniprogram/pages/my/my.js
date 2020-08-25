@@ -5,13 +5,77 @@ Page({
    * 页面的初始数据
    */
   data: {
+    avatarUrl: "",
+    nickName: "",
+    userInfo: {},
+    isShow: true
+  },
 
+  bindGetUserInfo(res) {
+
+    if (res.detail.userInfo) {
+      console.log(res.detail.userInfo)
+      this.setData({
+        userInfo: res.detail.userInfo,
+        isShow: false,
+      });
+      wx.switchTab({
+        url: 'my',
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that = this
+    wx.getStorage({
+      key: 'userInfo',
+      success: function (res) {
+        // success
+        that.setData({
+          userInfo: res.data
+        })
+      },
+      fail: function () {
+        // fail
+      },
+      complete: function () {
+        // complete
+      }
+    })
+
+    wx.getSetting({
+      success: (res) => {
+        if (res.authSetting['scope.userInfo']) {
+          console.log('已授权')
+
+          wx.getUserInfo({
+            success: function (res) {
+              // success
+              console.log(res);
+              that.setData({
+                isShow: false,
+                userInfo: res.userInfo
+              })
+              wx.setStorage('userInfo', res.userInfo)
+            },
+            fail: function () {
+              // fail
+            },
+            complete: function () {
+              // complete
+            }
+          })
+
+        } else {
+          console.log('未授权');
+        }
+      },
+      fail: () => { },
+      complete: () => { }
+    });
 
   },
 
