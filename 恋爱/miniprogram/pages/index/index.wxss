@@ -31,4 +31,18 @@
     width: 100%;
     
 }
-    
+.slide{
+    width: 100%;
+    height: 300rpx;
+}
+.slide-image{
+    width: 100%;
+    height: 100%;
+}
+.imageurl{
+    width: 100%;
+    height: 400rpx;
+}
+.middle-banner-swipper{
+    width: 100%;
+}
