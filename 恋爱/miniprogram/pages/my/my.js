@@ -1,20 +1,24 @@
 // miniprogram/pages/my/my.js
+import Dialog from '../../miniprogram_npm/@vant/weapp/dialog/dialog';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    avatarUrl: "",
-    nickName: "",
     userInfo: {},
-    isShow: true
+    isShow: true,
+    clicKmask: true,
+    list: [
+      { name: '导师', imgUrl: '../../images/tutor.png', popup: '导师微信：duandadalife', contact: 'duandadalife' },
+      { name: '联系客服', imgUrl: '../../images/customer.png', popup: '添加QQ：1520090739', contact: '1520090739' },
+      { name: '意见反馈', imgUrl: '../../images/feedback.png', popup: '发送邮件至1520090739@qq.com', contact: '1520090739@qq.com' }
+    ],
   },
 
   bindGetUserInfo(res) {
-
     if (res.detail.userInfo) {
-      console.log(res.detail.userInfo)
+      // console.log(res.detail.userInfo)
       this.setData({
         userInfo: res.detail.userInfo,
         isShow: false,
@@ -22,6 +26,33 @@ Page({
       wx.switchTab({
         url: 'my',
       })
+    }
+  },
+  clickEject(index) {
+    // console.log(index);
+    let id = index.currentTarget.dataset.index
+    for (let i = 0; i < this.data.list.length; i++) {
+      if (id == i) {
+        Dialog.alert({
+          closeOnClickOverlay: true,
+          title: '点击确认复制',
+          message: this.data.list[i].popup,
+        }).then(() => {
+          wx.setClipboardData({
+            data: this.data.list[i].contact,
+            success(res) {
+              wx.getClipboardData({
+                success(res) {
+                  wx.showToast({
+                    title: '复制成功',
+                    icon: 'success',
+                  })
+                }
+              })
+            }
+          })
+        })
+      }
     }
   },
 
@@ -34,8 +65,10 @@ Page({
       key: 'userInfo',
       success: function (res) {
         // success
+        // console.log(res)
         that.setData({
-          userInfo: res.data
+          userInfo: res.data,
+          isShow: false
         })
       },
       fail: function () {
@@ -49,15 +82,16 @@ Page({
     wx.getSetting({
       success: (res) => {
         if (res.authSetting['scope.userInfo']) {
-          console.log('已授权')
+          // console.log('已授权')
 
           wx.getUserInfo({
             success: function (res) {
               // success
-              console.log(res);
+              // console.log(res);
               that.setData({
                 isShow: false,
                 userInfo: res.userInfo
+
               })
               wx.setStorage('userInfo', res.userInfo)
             },

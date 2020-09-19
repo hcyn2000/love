@@ -2,11 +2,30 @@
 <view class="content">
     <view class="content-head">
         <view class="content-head-headshot">
-            <image wx:if="{{isShow}}" class="" src="../../images/landing.png" />
-            <image wx:else class="" src="{{userInfo.avatarUrl}}" />
+            <image wx:if="{{!isShow}}" class="" src="{{userInfo.avatarUrl}}" />
+            <image wx:else class="" src="../../images/landing.png" />
+
         </view>
         <button wx:if="{{isShow}}" class="btn" type="default" open-type="getUserInfo"
             bindgetuserinfo="bindGetUserInfo">登录/注册</button>
         <view wx:else class="content-head-text">{{userInfo.nickName}}</view>
     </view>
+    <view wx:for="{{list}}" wx:key="index" class="shishi" bindtap="clickEject" data-index="{{index}}">
+        <van-cell value="{{item.edition}}" is-link>
+            <view slot="title" class="list">
+                <image class="listImg" src="{{item.imgUrl}}"></image>
+                <view class="van-cell-text">{{item.name}}</view>
+            </view>
+        </van-cell>
+    </view>
+    <view class="shishi">
+        <van-cell value="当前版本1.0">
+            <view slot="title" class="list">
+                <image class="listImg" src="../../images/edition.png"></image>
+                <view class="van-cell-text">当前版本</view>
+            </view>
+        </van-cell>
+    </view>
+
 </view>
+<van-dialog id="van-dialog" />

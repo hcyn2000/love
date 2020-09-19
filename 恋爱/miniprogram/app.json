@@ -6,13 +6,13 @@
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#6495ED",
     "navigationBarTitleText": "旅梦恋爱",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#bfbfbf",
-    "selectedColor": "#e89abe",
+    "selectedColor": "#7dc5eb",
     "backgroundColor": "white",
     "list": [
       {
@@ -29,6 +29,5 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "sitemapLocation": "sitemap55.json"
 }
