@@ -1,1 +1,48 @@
-/* miniprogram/pages/index/index.wxss */
+.header{
+    height: 100rpx;
+    width: 100%;
+    background-color: rgb(238, 60, 90);
+    display: flex;
+    
+}
+.header-left{
+    margin-top: 20rpx;
+    width: 500rpx;
+    height: 70rpx;
+    margin-left: 10rpx;
+}
+.header-live{
+    display: inline-block;
+    width: 50rpx;
+    height: 20rpx;
+    line-height: 20rpx;
+    font-weight: 1000;
+    margin-top: 20rpx;
+    margin-left: 86rpx;
+    font-size: 25rpx;
+    color: white;
+}
+.header-right{
+    width: 40rpx;
+    height: 40rpx;
+    margin: 10rpx;
+}
+.searchBar{
+    width: 100%;
+    
+}
+.slide{
+    width: 100%;
+    height: 300rpx;
+}
+.slide-image{
+    width: 100%;
+    height: 100%;
+}
+.imageurl{
+    width: 100%;
+    height: 400rpx;
+}
+.middle-banner-swipper{
+    width: 100%;
+}

@@ -1,4 +1,4 @@
-// miniprogram/pages/index/index.js
+// miniprogram/pages/search/search.js
 Page({
 
   /**
@@ -6,26 +6,30 @@ Page({
    */
   data: {
     value: '',
-
-    img: [
-      { img: "../../images/1.png" },
-      { img: "../../images/2.jpg" },
-      { img: "../../images/3.png" }
+    items: [
+      { name1: '开场', name2: "套路", name3: "喜欢" },
+      { name1: '开场', name2: "套路", name3: "喜欢" },
+      { name1: '开场', name2: "套路", name3: "喜欢" },
+      { name1: '开场', name2: "套路", name3: "喜欢" },
+      { name1: '开场', name2: "套路", name3: "喜欢" },
+      { name1: '开场', name2: "套路", name3: "喜欢" }
     ]
-
   },
+
+
   onChange(e) {
+    console.log(e);
     this.setData({
       value: e.detail,
     });
   },
-  onSearch() {
+  onSearch(res) {
+    console.log(res);
     Toast('搜索' + this.data.value);
   },
   onClick() {
     Toast('搜索' + this.data.value);
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
