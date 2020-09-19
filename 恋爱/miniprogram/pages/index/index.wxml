@@ -1,16 +1,27 @@
 <view class="container">
+	<!-- bind:tap="onclike" -->
+	<!-- 顶部 -->
+	<view class="header-content">
+		<text >{{name}}</text>
+
+	</view>
+	<view class="headername">{{menname}}</view>
+
 	<view class="header">
 		<image class="header-left" src="/images/标题.png"></image>
 		<text class="header-live">直播</text>
 		<image class="header-right" src="/images/living.gif"></image>
 	</view>
+	<!-- 组件搜索框 -->
 	<van-search
+	 bindtap="jumpPage"
 	 class="searchBar"
 	 value="{{ value }}"
 	 shape="round"
 	 background="rgb(238, 60, 90)"
 	 placeholder="请输入搜索关键词"
 	/>
+	<!-- 轮播图 -->
 	<swiper
 	 class="middle-banner-swipper"
 	 indicator-active-color="#555555"
@@ -23,6 +34,72 @@
 			<image class="imageurl" src="{{item.img}}" />
 		</swiper-item>
 	</swiper>
-	<view class="content">话术</view>
+	<!-- 底部 -->
+	<view class="content">
+		<!-- 底部左侧按钮 -->
+		<view class="content-left">
+			<view
+			 class="content-left_title"
+			 wx:for="{{items}}"
+			 wx:key="index"
+			>
+				<button
+				 class="btn"
+				 bindtap="select"
+				 data-id="{{item.id}}"
+				 data-index="{{index}}"
+				 style="background-color: {{item.color}};"
+				>{{item.listname}}
+				</button>
+			</view>
+
+		</view>
+		<!-- 底部右侧内容 -->
+		<scroll-view
+		 scroll-y="true"
+		 scroll-top="0"
+		 scroll-into-view="{{toview}}"
+		 scroll-with-animation="true"
+		 scroll-top="{{scrolltop}}"
+		 bindscroll="bdscroll"
+		 style="height: 750rpx;"
+		>
+			<view
+			 class="content-right"
+			 wx:for="{{info}}"
+			 wx:key="index"
+			 id="{{item.id}}"
+			>
+				<view
+				 class="content-right_list"
+				 wx:for="{{item.list}}"
+				 wx:for-item="items"
+				 wx:key="index"
+				 wx:for-index="childIndex"
+				>
+					<view class="content-right_frame" data-idx="{{index}}">
+						<view class="frame-image">
+							<image class="frame-imageurl" src="{{items.imageurl}}" />
+						</view>
+						<view class="frame-content">
+							<text class="frame-content_title" >{{items.texttitle}} </text>
+							<button
+							 class="frame-content_btn"
+							 data-id="{{index}}"
+							 bind:tap="jump"
+							 data-detail="{{detai}}"
+							>点击
+							</button>
+
+						</view>
+					</view>
+
+				</view>
+
+			</view>
+		</scroll-view>
+
+	</view>
+
 </view>
 

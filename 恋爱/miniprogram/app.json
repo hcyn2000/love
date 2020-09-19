@@ -1,7 +1,13 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/search/search",
+    "pages/Cloud-submission/Cloud-submission",
+    "pages/content1/content1",
+    "pages/content2/content2",
+    "pages/content3/content3",
+    "pages/content4/content4"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -22,11 +28,18 @@
         "selectedIconPath": "images/love2.png"
       },
       {
+        "pagePath": "pages/search/search",
+        "text": "搜索",
+        "iconPath": "images/搜索 (1).png",
+        "selectedIconPath": "images/搜索.png"
+      },
+      {
         "pagePath": "pages/my/my",
         "text": "我的",
         "iconPath": "images/my1.png",
         "selectedIconPath": "images/my2.png"
       }
+     
     ]
   },
   "sitemapLocation": "sitemap.json"

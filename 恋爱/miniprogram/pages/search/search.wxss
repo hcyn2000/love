@@ -15,15 +15,19 @@
     border-radius: 20%;
 }
 .keywordbox{
-    width: 100%;
+    width: 238rpx;
     height: 100rpx;
-    display: flex;
+    display: inline-block;
 }
 .keyword{
+    display: inline-block;
     flex:1;
-    height: 58rpx;
-    width: 300rpx;
-    margin: 35rpx ;
+    height: 75rpx;
+    width: 210rpx;
+    margin: 22rpx ;
     text-align: center;
     border: 1px solid #000;
+}
+.box{
+    float: left;
 }

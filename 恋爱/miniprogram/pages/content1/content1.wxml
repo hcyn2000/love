@@ -1,0 +1,16 @@
+<van-collapse value="{{ activeNames }}" bind:change="onChange">
+	<van-collapse-item title="趣味搭讪" name="1">
+{{content}}
+	</van-collapse-item>
+	<van-collapse-item title="好奇开场" name="2">
+	{{text1}}
+	</van-collapse-item>
+	<van-collapse-item title="间接开场" name="3">
+		{{text2}}
+	</van-collapse-item>
+	<van-collapse-item title="重新开场" name="3">
+	{{text3}}
+	</van-collapse-item>
+
+</van-collapse>
+
