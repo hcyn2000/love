@@ -3,9 +3,11 @@ page {
     background-color: #fff;
 }
 .content-head {
-    background-color: skyblue;
+    background: linear-gradient(to bottom,#6495ED,	#87CEEB);
     padding-top: 70rpx ;
     overflow: hidden;
+    animation: slideInDown 2.5s 1;
+    text-align: center;
 }
 .content-head-headshot {
     margin: 0 auto;
@@ -24,5 +26,20 @@ page {
     color: #fff;
 }
 .content-head .btn {
-    margin: 25rpx auto;
+    display: inline-block;
+    margin: 25rpx 0;
+    width: 50%;
+    border-radius: 50rpx;
+}
+.list {
+    display: flex;
+    align-items: center;
+}
+.listImg {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+}
+.shishi{
+    animation: fadeInRight 2.5s 1;
 }
