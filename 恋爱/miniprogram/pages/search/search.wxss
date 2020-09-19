@@ -13,6 +13,7 @@
 }
 .searchbox{
     border-radius: 20%;
+    background-color: #6495ED;
 }
 .keywordbox{
     width: 238rpx;
